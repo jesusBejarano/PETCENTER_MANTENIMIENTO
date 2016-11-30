@@ -1,0 +1,265 @@
+﻿<script type="text/javascript" src="/Scripts/ControladorasAngular/controller-RECLA-BuscarSolicutudesjs.js"></script>
+<div id="ContenedorBody" style="width: 100%; clear: both; position: static; zoom: 1;">
+<div>
+<div id="centroPagina" class="currentPageClass col-md-12 wrapper  wrapperMediano" style="padding-top: 0px !important; padding-bottom: 0px !important; border: 0px !important; position: relative">
+<div class="contenido clearfix ng-view ng-scope" style="border: 1px solid #0E75B5;">
+<div class="block ng-scope" style="">
+<div ng-app="api" ng-controller="BuscarSolicitudesController" class="ng-scope">
+<div id="seccion-1">
+    <div class="block_menu">
+        <div style="max-width: 100%; height: 100%">
+            <div class="boton">
+                <button class="SeparatorLeft boton1Style boton1" ng-click="Buscar_Click();" ng-enter="Enter()" style="">
+                    <span class="boton1Span">
+                              <img class="boton1Img csBtnBuscar" alt="Buscar" src="/Images/formatmap32x32.png">
+                              </span>
+                    <span class="boton1txt">Buscar</span>
+                </button>
+            </div>
+            <div class="boton" ng-show="FlagMostrarBotonNuevo">
+                <button class="SeparatorLeft boton1Style boton1" ng-click="Nuevo_Click();" style="">
+                    <span class="boton1Span">
+                              <img class="boton1Img csBtnAgregar" alt="Nuevo" src="/Images/formatmap32x32.png">
+                              </span>
+                    <span class="boton1txt">Crear</span>
+                </button>
+            </div>
+            <div class="boton">
+                <button class="SeparatorLeft boton1Style boton1" ng-click="Limpiar_Click();" style="">
+                    <span class="boton1Span">
+                              <img class="boton1Img csBtnLimpiar" alt="Limpiar" src="/Images/formatmap32x32.png">
+                              </span>
+                    <span class="boton1txt">Limpiar</span>
+                </button>
+            </div>
+            <div class="boton">
+                <button class="SeparatorLeft boton1Style boton1" ng-click="Salir_Click();" style="">
+                    <span class="boton1Span">
+                              <img class="boton1Img csBtnSalir" alt="Salir" src="/Images/formatmap32x32.png">
+                              </span>
+                    <span class="boton1txt">Salir</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="seccion-2">
+    <div>
+        <div class="block_cab block_cab_active">
+            <h2>
+                <span>Datos Generales</span>
+            </h2>
+            <h3></h3>
+            <div class="acordeon">
+            </div>
+        </div>
+        <form id="BusquedaSolicitudFrm" name="BusquedaSolicitudFrm" class="ng-pristine ng-invalid ng-invalid-required">
+            <div class="block_content" style="width: 100%">
+                <!------------------- 1 Seccion -------------------------------------------->
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="col-md-12 row">
+                                <div class="col-md-4">
+                                    Nro Solicitud
+                                </div>
+                                <div class="col-md-8">
+                                    <input class="InputTEXT_05" maxlength="70" type="text" ng-enter="Enter()"
+                                           ng-model="$root.DatosFormulario.FiltrosBusquedaSolicitud.CodigoSolicitud">
+                                    <div class="caja11 msgerror CodigoSolicitud">
+                                        <span class="field-validation-valid msgerror" data-valmsg-for="root.DatosFormulario.FiltrosBusquedaSolicitud.CodigoSolicitud" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-md-12 row">
+                                <div class="col-md-4">
+                                    Tipo Mantenimiento
+                                </div>
+                                <div class="col-md-8">
+                                    <select ng-model="$root.DatosFormulario.FiltrosBusquedaSolicitud.CodigoTipoMantenimiento"
+                                            ng-options="tp.Codigo as tp.Descripcion for tp in $root.DatosFormulario.FiltrosBusquedaSolicitudCargaInicial.TipoMantenimiento"
+                                            class="InputSELECT_01"
+                                            id="$root.DatosFormulario.FiltrosBusquedaSolicitud.TipoMantenimiento"
+                                            name="$root.DatosFormulario.FiltrosBusquedaSolicitud.TipoMantenimiento">
+                                        <option value="" class="">[Seleccione]</option>
+                                    </select>
+                                    <div class="caja11 msgerror CodigoTipoMantenimiento">
+                                        <span class="field-validation-valid msgerror" data-valmsg-for="$root.DatosFormulario.FiltrosBusquedaSolicitud.CodigoTipoMantenimiento" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-md-4">
+                                Fecha Inicio
+                            </div>
+                            <div class="col-md-8">
+                                <input class="InputTEXT_04Fecha"
+                                       maxlength="10" type="text"
+                                       ng-model="$root.DatosFormulario.FiltrosBusquedaSolicitud.FechaInicio"
+                                       data-bind="dateValue: $root.DatosFormulario.FiltrosBusquedaSolicitud.FechaInicio,datePattern: 'dd/MM/yyyy'"
+                                       data-val="true"
+                                       ng-enter="Enter()"
+                                       data-val-date="El campo Fecha Inicio debe ser una fecha."
+                                       id="FechaInicio"
+                                       name="$root.DatosFormulario.FiltrosBusquedaSolicitud.FechaInicio"
+                                       required
+                                       control_max_date="FechaFin"/>
+                                <div class="caja11 msgerror FechaInicio">
+                                    <span class="field-validation-valid msgerror" data-valmsg-for="$root.DatosFormulario.FiltrosBusquedaSolicitud.FechaInicio" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!------------------- 2 Seccion -------------------------------------------->
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="col-md-12 row">
+                                <div class="col-md-4">
+                                    Estado
+                                </div>
+                                <div class="col-md-8">
+                                    <select ng-model="$root.DatosFormulario.FiltrosBusquedaSolicitud.Estado"
+                                            ng-options="estado.Codigo as estado.Descripcion for estado in $root.DatosFormulario.FiltrosBusquedaSolicitudCargaInicial.Estado"
+                                            class="InputSELECT_01"
+                                            id="$root.DatosFormulario.FiltrosBusquedaSolicitud.Estado"
+                                            data-val="true"
+                                            data-val-required="Estado es requerido."
+                                            name="$root.DatosFormulario.FiltrosBusquedaSolicitud.Estado"
+                                            ng-disabled="$root.DatosFormulario.FiltrosBusquedaSolicitudCargaInicial.HabilitadoEstado=='False'"
+                                             required>
+                                        <option value="" class="">[Seleccione]</option>
+                                    </select>
+                                    <div class="caja11 msgerror Estado">
+                                        <span class="field-validation-valid msgerror" data-valmsg-for="$root.DatosFormulario.FiltrosBusquedaSolicitud.Estado" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-md-12 row">
+                                <div class="col-md-4">
+                                    Sede
+                                </div>
+                                <div class="col-md-8">
+                                    <select ng-model="$root.DatosFormulario.FiltrosBusquedaSolicitud.CodigoSede"
+                                            ng-options="sede.Codigo as sede.Descripcion for sede in $root.DatosFormulario.FiltrosBusquedaSolicitudCargaInicial.Sede"
+                                            class="InputSELECT_01"
+                                            id="$root.DatosFormulario.FiltrosBusquedaSolicitud.CodigoSede" data-val="true"
+                                            name="$root.DatosFormulario.FiltrosBusquedaSolicitud.CodigoSede"
+                                            ng-disabled="$root.DatosFormulario.FiltrosBusquedaSolicitudCargaInicial.HabilitadoSede=='False'">
+                                        <option value="" class="">[Seleccione]</option>
+                                    </select>
+                                    <div class="caja11 msgerror CodigoSede">
+                                        <span class="field-validation-valid msgerror" data-valmsg-for="$root.DatosFormulario.FiltrosBusquedaSolicitud.CodigoSede" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-md-4">
+                                Fecha Fin
+                            </div>
+                            <div class="col-md-8">
+                                <input class="InputTEXT_04Fecha"
+                                       maxlength="10" type="text"
+                                       ng-model="$root.DatosFormulario.FiltrosBusquedaSolicitud.FechaFin"
+                                       data-bind="dateValue: $root.DatosFormulario.FiltrosBusquedaSolicitud.FechaFin,datePattern: 'dd/MM/yyyy'"
+                                       data-val="true"
+                                       ng-enter="Enter()"
+                                       data-val-date="El campo Fecha Fin debe ser una fecha."
+                                       id="FechaFin"
+                                       name="$root.DatosFormulario.FiltrosBusquedaSolicitud.FechaFin"
+                                       required
+                                       control_min_date="FechaInicio"/>
+                                <div class="caja11 msgerror FechaFin">
+                                    <span class="field-validation-valid msgerror" data-valmsg-for="$root.DatosFormulario.FiltrosBusquedaSolicitud.FechaFin" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="col-md-12 row">
+                                <div class="col-md-4">
+                                    Área
+                                </div>
+                                <div class="col-md-8">
+                                    <select ng-model="$root.DatosFormulario.FiltrosBusquedaSolicitud.CodigoArea"
+                                            ng-options="area.Codigo as area.Descripcion for area in $root.DatosFormulario.FiltrosBusquedaSolicitudCargaInicial.Area"
+                                            class="InputSELECT_01"
+                                            id="$root.DatosFormulario.FiltrosBusquedaSolicitud.CodigoArea"
+                                            name="$root.DatosFormulario.FiltrosBusquedaSolicitud.CodigoArea"
+                                            ng-disabled="$root.DatosFormulario.FiltrosBusquedaSolicitudCargaInicial.HabilitadoArea=='False'">
+                                        <option value="" class="">[Seleccione]</option>
+                                    </select>
+                                    <div class="caja11 msgerror CodigoArea">
+                                        <span class="field-validation-valid msgerror" data-valmsg-for="$root.DatosFormulario.FiltrosBusquedaSolicitud.CodigoArea" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                             <div class="col-md-4">
+                            <div class="col-md-12 row">
+                                <div class="col-md-4">
+                                    Descripcion
+                                </div>
+                                <div class="col-md-8">
+                                    <input class="InputTEXT_05"
+                                           maxlength="50"
+                                           type="text"
+                                           ng-enter="Enter()"
+                                           ng-model="$root.DatosFormulario.FiltrosBusquedaSolicitud.Descripcion"
+                                           id="$root.DatosFormulario.FiltrosBusquedaSolicitud.Descripcion"
+                                           name="$root.DatosFormulario.FiltrosBusquedaSolicitud.Descripcion"
+                                           ng-disabled="FlagEditing==false">
+                                    <div class="caja11 msgerror Descripcion">
+                                        <span class="field-validation-valid msgerror" data-valmsg-for="$root.DatosFormulario.FiltrosBusquedaSolicitud.Descripcion" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="seccion-3">
+    <div style="display: none">0</div>
+    <div style="width: 100%; float: left">
+        <div class="block_cab block_cab_active">
+            <h2>
+                <span>RESULTADO DE BÚSQUEDA</span>
+            </h2>
+            <h3></h3>
+            <div class="acordeon">
+            </div>
+        </div>
+        <div id="ContentListadoddefbf3b-5f51-47b0-a9d0-54a4cf5fdf65" class="block_content">
+            <div class="form_section" style="width: 100%">
+                <table id="consultaSolicitudes"></table>
+                <div id="pagerconsultaSolicitudes"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+    
+    function Editar(codigoSolicitud) {
+        window.location.href = '/Solicitud/RegistroSolicitud/?codigoSolicitud=' + codigoSolicitud;
+    }
+</script>

@@ -1,0 +1,146 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<div class="block" style="min-height: 500px;">
+ <div ng-app="api" ng-controller="AgregarMantenimientoController" class="ng-scope">
+          <div id="seccion-1">
+              <div class="block_menu">
+
+                  <div style="max-width: 100%; height: 100%">
+                      <div class="boton" ng-show="FlagMostrarBotonGuardar">
+                          <button class="SeparatorLeft boton1Style boton1" ng-click="Guardar_Click();" style="">
+                              <span class="boton1Span">
+                                <img class="boton1Img csBtnGuardar" alt="Guardar" src="/Images/formatmap32x32.png">
+                            </span>
+                              <span class="boton1txt">Guardar</span>
+                          </button>
+                      </div>
+                      <div class="boton">
+                          <button class="SeparatorLeft boton1Style boton1" ng-click="Salir_Click();" style="">
+                              <span class="boton1Span">
+                                <img class="boton1Img csBtnSalir" alt="Salir" src="/Images/formatmap32x32.png">
+                            </span>
+                              <span class="boton1txt">Salir</span>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+     </div>
+     <div id="seccion-2">
+    <div>
+        <div class="block_cab block_cab_active">
+            <h2>
+                <span>Datos Mantenimiento</span>
+            </h2>
+            <h3></h3>
+            <div class="acordeon">
+            </div>
+        </div>
+        <form id="AgregarMantenimientoFrm" name="AgregarMantenimientoFrm" class="ng-pristine ng-invalid ng-invalid-required">
+            <div class="block_content" style="width: 100%">
+                <!------------------- 1 Seccion -------------------------------------------->
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-12 row">
+                                <div class="col-md-4">
+                                    Nombre
+                                </div>
+                                <div class="col-md-8">
+                                    <input class="InputTEXT_05"
+                                           maxlength="70"
+                                           type="text"
+                                           ng-enter="Enter()"
+                                           ng-model="$root.DatosFormulario.DatosMantenimiento.Nombre"
+                                           data-bind="value: $root.DatosFormulario.DatosMantenimiento.Nombre"
+                                           data-val="true"
+                                           data-val-required="Nombre es requerido."
+                                           id="$root.DatosFormulario.DatosMantenimiento.Nombre"
+                                           name="$root.DatosFormulario.DatosMantenimiento.Nombre"
+                                           ng-disabled="FlagEditing==false"
+                                           required>
+
+                                    <div class="caja11 msgerror Nombre">
+                                        <span class="field-validation-valid msgerror" data-valmsg-for="$root.DatosFormulario.DatosMantenimiento.Nombre" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                     
+                    </div>
+                </div>
+                <!------------------- 2 Seccion -------------------------------------------->
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-12 row">
+                                <div class="col-md-4">
+                                    Fecha Mantenimiento
+                                </div>
+                                <div class="col-md-8">
+                                    <input class="InputTEXT_04Fecha"
+                                           maxlength="10" type="text"
+                                           ng-enter="Enter()"
+                                           ng-model="$root.DatosFormulario.DatosMantenimiento.FechaMantenimiento"
+                                           data-bind="dateValue: $root.DatosFormulario.DatosMantenimiento.FechaMantenimiento,datePattern: 'dd/MM/yyyy'"
+                                           data-val="true"
+                                           data-val-required="Fecha Mantenimiento es requerido."
+                                           data-val-date="El campo Fecha Mantenimiento debe ser una fecha."
+                                           id="FechaMantenimiento"
+                                           name="$root.DatosFormulario.DatosMantenimiento.FechaMantenimiento"
+                                           required/>
+
+                                    <div class="caja11 msgerror FechaMantenimiento">
+                                        <span class="field-validation-valid msgerror" data-valmsg-for="$root.DatosFormulario.DatosMantenimiento.FechaMantenimiento" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+               </div>
+                <!------------------- 3 Seccion -------------------------------------------->
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-12 row">
+                                <div class="col-md-4">
+                                    Descripcion
+                                </div>
+                                <div class="col-md-8">
+                                    <textarea class="InputTEXT_06"
+                                              type="text"
+                                              maxlength="1000"
+                                              ng-enter="Enter()"
+                                              ng-model="$root.DatosFormulario.DatosMantenimiento.Descripcion"
+                                              data-bind="value: $root.DatosFormulario.DatosMantenimiento.Descripcion"
+                                              data-val="true"
+                                              data-val-required="Descripcion es requerido."
+                                              id="$root.DatosFormulario.DatosMantenimiento.Descripcion"
+                                              name="$root.DatosFormulario.DatosMantenimiento.Descripcion"
+                                              ng-disabled="FlagEditing==false"
+                                              required>
+                                        
+                                      
+                                    </textarea>
+                                    <div class="caja11 msgerror Descripcion">
+                                        <span class="field-validation-valid msgerror" data-valmsg-for="$root.DatosFormulario.DatosMantenimiento.Descrpcion" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+             </div>
+        </form>
+    </div>
+</div>
+ </div> 
+</div>
+
+
